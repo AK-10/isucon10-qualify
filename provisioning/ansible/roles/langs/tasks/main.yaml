@@ -78,19 +78,19 @@
 #    content: |
 #      export PATH=/home/isucon/local/ruby/bin:$PATH
 
-- name: Install perl v5.32.0
-  become: yes
-  become_user: isucon
-  command: /tmp/xbuild/perl-install 5.32.0 /home/isucon/local/perl -- -Duselongdouble -j {{ ansible_processor_vcpus }}
-
-- name: Add PATH for perl 
-  become: yes
-  become_user: isucon
-  blockinfile:
-    marker: "# {mark} ANSIBLE MANAGED BLOCK perl"
-    path: /home/isucon/.bashrc
-    content: |
-      export PATH=/home/isucon/local/perl/bin:$PATH
+#- name: Install perl v5.32.0
+#  become: yes
+#  become_user: isucon
+#  command: /tmp/xbuild/perl-install 5.32.0 /home/isucon/local/perl -- -Duselongdouble -j {{ ansible_processor_vcpus }}
+#
+#- name: Add PATH for perl 
+#  become: yes
+#  become_user: isucon
+#  blockinfile:
+#    marker: "# {mark} ANSIBLE MANAGED BLOCK perl"
+#    path: /home/isucon/.bashrc
+#    content: |
+#      export PATH=/home/isucon/local/perl/bin:$PATH
 
 - name: Install Node v14.9.0
   become: yes
@@ -107,7 +107,7 @@
       export PATH=/home/isucon/local/node/bin:$PATH
 
 
-- name: Install Go 1.14.7 
+- name: Install Go 1.14.7
   become: yes
   become_user: isucon
   command: /tmp/xbuild/go-install 1.14.7 /home/isucon/local/go
@@ -134,5 +134,5 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK python"
     path: /home/isucon/.bashrc
     content: |
-     #      export PATH=/home/isucon/local/python/bin:$PATH
+      export PATH=/home/isucon/local/python/bin:$PATH
 
